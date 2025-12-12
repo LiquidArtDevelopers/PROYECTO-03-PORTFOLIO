@@ -1,7 +1,9 @@
 
 @use './resources/_config' as c;
 
+
 body{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,33 +12,91 @@ body{
     ::-webkit-scrollbar{
         display: none;
     }
+}
 
-    nav{
-        background-color: red;
-        width: 100%;
-        height: 10dvh;
+
+nav{
+    // como es el nav, su forma
+    background-color:rgb(17, 17, 17);
+    width: 100%;
+    height: 10dvh;
+
+    // cómo organiza a sus hijos
+    display: flex;
+    flex-direction: row;
+    // ejeX
+    justify-content: center;
+    // ejeY
+    align-items: center;
+    position: relative;
+
+    :nth-child(1){
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
-    header{
+
+}
+
+
+
+header{
+    width: 100%;
+    height: 90dvh;
+    // background-color: aqua;
+    overflow-y: scroll;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .caja{
         width: 100%;
-        height: 90dvh;
-        background-color: aqua;
-        overflow-y: scroll;
+        // background-color: blueviolet;
+        padding: 1rem;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
 
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-
-        .caja{
-            width: 100%;
-            background-color: blueviolet;
-            @media only screen and (min-width:900px){
-                width: 45%;
-            }
-            @media only screen and (min-width:1400px){
-                width: 18%;
-            }
+        flex-direction: column;
+        // ejeX
+        align-items: center;
+        // ejeY
+        justify-content: flex-start;
+        row-gap: 1rem;
+        
+        @media only screen and (min-width:c.$tablet){
+            width: 32%;
         }
+        @media only screen and (min-width:c.$desktop){
+            width: 18%;
+        }
+
+        h2{
+            color: c.$color00;
+        }
+        p{
+            color: c.$color00;
+        }
+        img{
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: -1;
+            filter: brightness(0.5);
+        }
+        
+
     }
 }
