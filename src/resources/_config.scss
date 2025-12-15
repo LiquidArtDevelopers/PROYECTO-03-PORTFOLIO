@@ -6,25 +6,38 @@
   box-sizing: border-box;
 }
 
+// doy de alta las fuentes en el proyecto
+@font-face {
+  font-family: 'NotoSans';
+  src: url('./fonts/NotoSans-VariableFont_wdth\,wght.ttf');
+}
+@font-face {
+  font-family: 'PoiretOnes';
+  src: url('./fonts/PoiretOne-Regular.ttf');
+}
+
 // Variables de mi proyecto
 $color00:white;
 $color01: rgb(60, 60, 60);
-$color02: rgb(204, 74, 74);
+$color02: #cc4a4a;
 
 $tablet: 600px;
 $desktop: 1200px;
 
+$fuenteTitulo:'PoiretOnes';
+$fuenteTexto:'NotoSans';
+
 
 
 h1{
-  background-color: aqua;
   color: $color00;
-  font-family: monospace;
+  font-family: $fuenteTitulo;
   font-size: clamp(1rem, 3vw, 3rem);
 }
 
 h2{
   color: $color02;
+  font-family: $fuenteTitulo;
 }
 
 .boton{
@@ -35,4 +48,10 @@ h2{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+a, p, span, li{
+  font-family: $fuenteTexto;
+}
+
+
 
